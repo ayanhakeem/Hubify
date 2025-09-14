@@ -1,0 +1,15 @@
+/* Make the page a flex column */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content area grows to fill space between navbar and footer */
+.content {
+  flex: 1;
+}

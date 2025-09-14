@@ -1,0 +1,148 @@
+.about {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  background: #f9fbff;
+  padding-bottom: 60px;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: white;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-hero span {
+  color: #fff700;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Mission Section */
+.about-mission {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.mission-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 119, 255, 0.1);
+}
+
+.mission-box h2 {
+  color: #0077ff;
+  margin-bottom: 15px;
+}
+
+/* Highlights */
+.about-highlights {
+  padding: 60px 20px;
+  background: #eef6ff;
+  text-align: center;
+}
+
+.about-highlights h2 {
+  margin-bottom: 40px;
+  color: #0077ff;
+}
+
+.highlights-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.highlight-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-card h3 {
+  margin-bottom: 12px;
+  color: #0077ff;
+}
+
+/* Team Section */
+.about-team {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-team h2 {
+  margin-bottom: 40px;
+  color: #0077ff;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.team-member {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.1);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-photo {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.role {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .highlights-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-grid {
+    flex-direction: column;
+  }
+}
