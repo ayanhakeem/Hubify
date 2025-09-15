@@ -4,10 +4,19 @@ const authMiddleware = require("../middleware/auth");
 const verifyAdmin = require("../middleware/verifyAdmin");
 const router = express.Router();
 
+// Get all events
+router.get("/", async (req, res) => {
+  try {
+    const events = await Event.find().populate("createdBy", "name email");
+    res.json(events);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Admin creates event
 router.post("/", authMiddleware, verifyAdmin, async (req, res) => {
   const { title, description, date, status } = req.body;
-
   try {
     const event = new Event({
       title,
@@ -23,13 +32,17 @@ router.post("/", authMiddleware, verifyAdmin, async (req, res) => {
   }
 });
 
-// Get all events
-router.get("/", async (req, res) => {
+// DELETE an event (admin only)
+router.delete("/:id", authMiddleware, verifyAdmin, async (req, res) => {
   try {
-    const events = await Event.find().populate("createdBy", "name email");
-    res.json(events);
+    const event = await Event.findById(req.params.id);
+    if (!event) return res.status(404).json({ message: "Event not found" });
+
+    await event.deleteOne();
+    res.json({ message: "Event deleted successfully" });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
   }
 });
 
